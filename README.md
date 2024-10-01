@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/8cf3ac92-7aa1-4976-9126-814443e8554c)
+
 # Project Summary
 DevIndex is a collaborative and interactive platform designed as a virtual hangout for developers. It merges a custom, personalized ChatGPT wrapper with animated, personalized subdomains to foster community, creativity, and knowledge sharing. The platform aims to engage developers of varying experience levels by providing them with fun and personalized spaces to showcase their skills, share knowledge, and interact with others in the community.
 
