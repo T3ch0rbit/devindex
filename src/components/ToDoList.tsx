@@ -35,9 +35,10 @@ import {
   // Main To-do List Component
   const TodoList = () => {
     const [tasks, setTasks] = useState([
-      { id: 1, text: 'Set up project repository', isCompleted: false },
-      { id: 2, text: 'Integrate ChatGPT API', isCompleted: false },
-      { id: 3, text: 'Create personalized subdomains', isCompleted: false },
+      { id: 1, text: 'Set up subdomain structure', isCompleted: false },
+      { id: 2, text: 'Design the main platform interface', isCompleted: false },
+      { id: 3, text: 'Implement backend infrastructure', isCompleted: false },
+      { id: 4, text: 'Clippy V2', isCompleted: false },
     ]);
     const [newTask, setNewTask] = useState("");
   

@@ -12,7 +12,7 @@ const Home = () => {
       <ParticlesBackground />
 
       {/* Main Content */}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 0 }}>
         <div>
           <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
             <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -23,14 +23,6 @@ const Home = () => {
         </div>
         <h1>Dev Index</h1>
         <TodoList />
-        <div className="card">
-          <p>
-            Edit <code>src/components/Home.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
       </div>
     </>
   );

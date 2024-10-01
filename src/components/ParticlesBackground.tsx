@@ -1,84 +1,117 @@
-import React from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles-engine'; // Import directly from tsparticles
-import type { Engine } from 'tsparticles-engine'; // Import the Engine type
+import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import {
+  type Container,
+  type ISourceOptions,
+  MoveDirection,
+  OutMode,
+} from "@tsparticles/engine";
+// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
+// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesBackground = () => {
-  const particlesInit = async (main: Engine) => {
-    // You can initialize the tsparticles instance (main) here, which loads the full tsparticles engine
-    await loadFull(main); // This loads all tsparticles functionality
-  };
+  const [init, setInit] = useState(false);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const particlesLoaded = (container: any) => {
+  const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
   };
 
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        fullScreen: {
-          enable: true, // Enable particles on full screen
-          zIndex: -1,   // Ensure the particles are in the background
+  const options: ISourceOptions = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "#0d47a1",
         },
-        particles: {
-          number: {
-            value: 50, // Number of particles
-            density: {
-              enable: true,
-              value_area: 800, // Particle density
-            },
-          },
-          color: {
-            value: "#00BFFF", // Particle color
-          },
-          shape: {
-            type: "circle", // Particle shape
-          },
-          opacity: {
-            value: 0.5,
-          },
-          size: {
-            value: 3,
-            random: true,
-          },
-          move: {
+      },
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onClick: {
             enable: true,
-            speed: 1,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
+            mode: "push",
+          },
+          onHover: {
+            enable: true,
+            mode: "repulse",
           },
         },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
+        modes: {
+          push: {
+            quantity: 4,
           },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
           },
         },
-        detectRetina: true, // Adjust particle density based on screen size
-      }}
-    />
+      },
+      particles: {
+        color: {
+          value: "#ffffff",
+        },
+        links: {
+          color: "#ffffff",
+          distance: 150,
+          enable: true,
+          opacity: 0.5,
+          width: 1,
+        },
+        move: {
+          direction: MoveDirection.none,
+          enable: true,
+          outModes: {
+            default: OutMode.out,
+          },
+          random: false,
+          speed: 6,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 80,
+        },
+        opacity: {
+          value: 0.5,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
   );
+
+  if (init) {
+    return (
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
+    );
+  }
+
+  return <></>;
 };
 
 export default ParticlesBackground;

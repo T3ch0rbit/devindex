@@ -18,22 +18,18 @@ Team Collaboration: Sections dedicated to team projects, where contributors can 
 Initial Setup:
 
 Establish the project repository and development environment using .NET for the backend and React with TypeScript for the frontend.
-ChatGPT Integration:
 
-Integrate the ChatGPT API and develop a customizable interface for the personalized virtual assistant.
 Subdomain Structure:
-
 Set up the infrastructure to create personalized subdomains for each contributing developer. Developers will be able to customize their subdomains with themes, content, and Particle.js animations.
+
 Frontend Development:
-
 Design the main platform interface, including the forums, knowledge-sharing sections, and developer subdomains. Focus on intuitive navigation and easy customization for developers.
+
 Backend Development:
-
 Implement backend infrastructure to support user accounts, subdomain personalization, and forum discussions. Manage user authentication, forum posts, and file storage.
-Particle.js Integration:
 
-Implement Particle.js in each developer’s subdomain, allowing for personalized animations. Offer easy configuration options for developers to control how their subdomains appear.
-Testing and Feedback:
+Clippy V2 - Virtual assistant AI Wrapper Integration:
+Integrate an AI API and develop a customizable interface for the personalized virtual assistant.
 
 Conduct testing phases to gather feedback from the community, ensuring the platform is user-friendly, interactive, and visually appealing.
 
