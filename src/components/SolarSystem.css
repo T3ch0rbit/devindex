@@ -1,0 +1,96 @@
+/* Solar System Container */
+.solar-system {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Sun */
+  .sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Planets and Orbits */
+  .planet.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+  }
+  
+  /* Orbit Sizes */
+  .mercury {
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  }
+  
+  .venus {
+    width: 150px;
+    height: 150px;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+  }
+  
+  .earth {
+    width: 200px;
+    height: 200px;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+  }
+  
+  .mars {
+    width: 250px;
+    height: 250px;
+    top: calc(50% - 125px);
+    left: calc(50% - 125px);
+  }
+  
+  /* Planet Bodies */
+  .planet-inner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  /* Unique Colors for Planets */
+  .mercury .planet-inner {
+    background-color: gray;
+  }
+  
+  .venus .planet-inner {
+    background-color: orange;
+  }
+  
+  .earth .planet-inner {
+    background-color: blue;
+  }
+  
+  .mars .planet-inner {
+    background-color: red;
+  }
+  
+  /* Rotation Animation */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
