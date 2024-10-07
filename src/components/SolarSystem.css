@@ -1,96 +1,129 @@
 /* Solar System Container */
 .solar-system {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90vmin;  /* Make it take 90% of the smaller viewport dimension */
+  height: 90vmin; /* Ensures it maintains a square aspect ratio */
+  transform: translate(-50%, -50%); /* Center it in the viewport */
+  overflow: visible;  /* Allow planet orbits to be visible outside */
+
+  /* Background Image */
+  background-image: url('../assets/solarsystem.jpg');
+  background-size: cover;       /* Ensure the background covers the entire container */
+  background-position: center;  /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  width: 10vmin;
+  height: 10vmin;
+  background-color: yellow;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* General Orbit Styling */
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+/* Mercury Orbit */
+.mercury {
+  width: 25vmin;
+  height: 25vmin;
+  top: calc(50% - 12.5vmin);
+  left: calc(50% - 12.5vmin);
+  animation: rotate 10s linear infinite;
+}
+
+/* Venus Orbit */
+.venus {
+  width: 35vmin;
+  height: 35vmin;
+  top: calc(50% - 17.5vmin);
+  left: calc(50% - 17.5vmin);
+  animation: rotate 15s linear infinite;
+}
+
+/* Earth Orbit */
+.earth {
+  width: 45vmin;
+  height: 45vmin;
+  top: calc(50% - 22.5vmin);
+  left: calc(50% - 22.5vmin);
+  animation: rotate 20s linear infinite;
+}
+
+/* Mars Orbit */
+.mars {
+  width: 55vmin;
+  height: 55vmin;
+  top: calc(50% - 27.5vmin);
+  left: calc(50% - 27.5vmin);
+  animation: rotate 25s linear infinite;
+}
+
+/* Jupiter Orbit */
+.jupiter {
+  width: 65vmin;
+  height: 65vmin;
+  top: calc(50% - 32.5vmin);
+  left: calc(50% - 32.5vmin);
+  animation: rotate 35s linear infinite;
+}
+
+/* Saturn Orbit */
+.saturn {
+  width: 75vmin;
+  height: 75vmin;
+  top: calc(50% - 37.5vmin);
+  left: calc(50% - 37.5vmin);
+  animation: rotate 45s linear infinite;
+}
+
+/* Uranus Orbit */
+.uranus {
+  width: 85vmin;
+  height: 85vmin;
+  top: calc(50% - 42.5vmin);
+  left: calc(50% - 42.5vmin);
+  animation: rotate 55s linear infinite;
+}
+
+/* Neptune Orbit */
+.neptune {
+  width: 95vmin;
+  height: 95vmin;
+  top: calc(50% - 47.5vmin);
+  left: calc(50% - 47.5vmin);
+  animation: rotate 65s linear infinite;
+}
+
+/* Planet Image Styling */
+.planet-image {
+  position: absolute;
+  width: 6vmin;
+  height: 6vmin;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  
-  /* Sun */
-  .sun {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: yellow;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  to {
+    transform: rotate(360deg);
   }
-  
-  /* Planets and Orbits */
-  .planet.orbit {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: rotate 10s linear infinite;
-  }
-  
-  /* Orbit Sizes */
-  .mercury {
-    width: 100px;
-    height: 100px;
-    top: calc(50% - 50px);
-    left: calc(50% - 50px);
-  }
-  
-  .venus {
-    width: 150px;
-    height: 150px;
-    top: calc(50% - 75px);
-    left: calc(50% - 75px);
-  }
-  
-  .earth {
-    width: 200px;
-    height: 200px;
-    top: calc(50% - 100px);
-    left: calc(50% - 100px);
-  }
-  
-  .mars {
-    width: 250px;
-    height: 250px;
-    top: calc(50% - 125px);
-    left: calc(50% - 125px);
-  }
-  
-  /* Planet Bodies */
-  .planet-inner {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-  
-  /* Unique Colors for Planets */
-  .mercury .planet-inner {
-    background-color: gray;
-  }
-  
-  .venus .planet-inner {
-    background-color: orange;
-  }
-  
-  .earth .planet-inner {
-    background-color: blue;
-  }
-  
-  .mars .planet-inner {
-    background-color: red;
-  }
-  
-  /* Rotation Animation */
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+}
