@@ -17,117 +17,116 @@ body {
 
 /* Sun */
 .sun {
-    position: absolute;
-    width: 10vmin;
-    height: 10vmin;
-    background-color: yellow;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-  }
-  
-  /* General Orbit Styling */
-  .orbit {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transform-origin: center;
-    z-index: 1; /* Orbit lines should be at a lower z-index */
-  }
-  
-  /* Mercury Orbit and Planet */
-  .mercury {
-    width: 25vmin;
-    height: 25vmin;
-    top: calc(50% - 12.5vmin);
-    left: calc(50% - 12.5vmin);
-    animation: rotate 10s linear infinite;
-    z-index: 9; /* Higher z-index so it appears above other orbits */
-  }
-  
-  /* Venus Orbit and Planet */
-  .venus {
-    width: 35vmin;
-    height: 35vmin;
-    top: calc(50% - 17.5vmin);
-    left: calc(50% - 17.5vmin);
-    animation: rotate 15s linear infinite;
-    z-index: 8;
-  }
-  
-  /* Earth Orbit and Planet */
-  .earth {
-    width: 45vmin;
-    height: 45vmin;
-    top: calc(50% - 22.5vmin);
-    left: calc(50% - 22.5vmin);
-    animation: rotate 20s linear infinite;
-    z-index: 7;
-  }
-  
-  /* Mars Orbit and Planet */
-  .mars {
-    width: 55vmin;
-    height: 55vmin;
-    top: calc(50% - 27.5vmin);
-    left: calc(50% - 27.5vmin);
-    animation: rotate 25s linear infinite;
-    z-index: 6;
-  }
-  
-  /* Jupiter Orbit and Planet */
-  .jupiter {
-    width: 65vmin;
-    height: 65vmin;
-    top: calc(50% - 32.5vmin);
-    left: calc(50% - 32.5vmin);
-    animation: rotate 35s linear infinite;
-    z-index: 5;
-  }
-  
-  /* Saturn Orbit and Planet */
-  .saturn {
-    width: 75vmin;
-    height: 75vmin;
-    top: calc(50% - 37.5vmin);
-    left: calc(50% - 37.5vmin);
-    animation: rotate 45s linear infinite;
-    z-index: 4;
-  }
-  
-  /* Uranus Orbit and Planet */
-  .uranus {
-    width: 85vmin;
-    height: 85vmin;
-    top: calc(50% - 42.5vmin);
-    left: calc(50% - 42.5vmin);
-    animation: rotate 55s linear infinite;
-    z-index: 3;
-  }
-  
-  /* Neptune Orbit and Planet */
-  .neptune {
-    width: 95vmin;
-    height: 95vmin;
-    top: calc(50% - 47.5vmin);
-    left: calc(50% - 47.5vmin);
-    animation: rotate 65s linear infinite;
-    z-index: 2;
-  }
-  
-  /* Planet Image Styling */
-  .planet-image {
-    position: absolute;
-    width: 6vmin;
-    height: 6vmin;
-    border-radius: 50%;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: 10; /* Ensure planet images are on top for easy clicking */
-  }
+  position: absolute;
+  width: 8vmin;
+  height: 8vmin;
+  background-color: yellow;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* General Orbit Styling (Elliptical Orbits) */
+.orbit {
+  position: absolute;
+  border-radius: 50%; /* Keep as 50% for the elliptical appearance */
+  transform-origin: center;
+  z-index: 1;
+}
+
+/* Mercury Orbit and Planet (Elliptical Orbit) */
+.mercury {
+  width: 40vmin; /* Elliptical width */
+  height: 25vmin; /* Elliptical height */
+  top: calc(50% - 12.5vmin);
+  left: calc(50% - 20vmin);
+  animation: rotate 10s linear infinite;
+  z-index: 9;
+}
+
+/* Venus Orbit and Planet (Elliptical Orbit) */
+.venus {
+  width: 50vmin;
+  height: 30vmin;
+  top: calc(50% - 15vmin);
+  left: calc(50% - 25vmin);
+  animation: rotate 15s linear infinite;
+  z-index: 8;
+}
+
+/* Earth Orbit and Planet (Elliptical Orbit) */
+.earth {
+  width: 60vmin;
+  height: 35vmin;
+  top: calc(50% - 17.5vmin);
+  left: calc(50% - 30vmin);
+  animation: rotate 20s linear infinite;
+  z-index: 7;
+}
+
+/* Mars Orbit and Planet (Elliptical Orbit) */
+.mars {
+  width: 70vmin;
+  height: 40vmin;
+  top: calc(50% - 20vmin);
+  left: calc(50% - 35vmin);
+  animation: rotate 25s linear infinite;
+  z-index: 6;
+}
+
+/* Jupiter Orbit and Planet (Elliptical Orbit) */
+.jupiter {
+  width: 80vmin;
+  height: 45vmin;
+  top: calc(50% - 22.5vmin);
+  left: calc(50% - 40vmin);
+  animation: rotate 35s linear infinite;
+  z-index: 5;
+}
+
+/* Saturn Orbit and Planet (Elliptical Orbit) */
+.saturn {
+  width: 90vmin;
+  height: 50vmin;
+  top: calc(50% - 25vmin);
+  left: calc(50% - 45vmin);
+  animation: rotate 45s linear infinite;
+  z-index: 4;
+}
+
+/* Uranus Orbit and Planet (Elliptical Orbit) */
+.uranus {
+  width: 100vmin;
+  height: 55vmin;
+  top: calc(50% - 27.5vmin);
+  left: calc(50% - 50vmin);
+  animation: rotate 55s linear infinite;
+  z-index: 3;
+}
+
+/* Neptune Orbit and Planet (Elliptical Orbit) */
+.neptune {
+  width: 110vmin;
+  height: 60vmin;
+  top: calc(50% - 30vmin);
+  left: calc(50% - 55vmin);
+  animation: rotate 65s linear infinite;
+  z-index: 2;
+}
+
+/* Planet Image Styling */
+.planet-image {
+  position: absolute;
+  width: 6vmin;
+  height: 6vmin;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure planet images are on top for easy clicking */
+}
 
 /* Rotation Animation */
 @keyframes rotate {
